@@ -28,11 +28,11 @@ var firstAndPike = {
                 pikeLocation.appendChild(listLinePike);
 
             this.totalPerHr.push(calcCookiesPerHrPike);
-            this.total +=  calcCookiesPerHrPike    
+            this.total +=  calcCookiesPerHrPike;   
                        
         }    
-        var hourlycount = document.createElement('p');
-            hourlycount.textContent = 'Total for the day: ' + this.total;
+        var hourlyCount = document.createElement('p');
+            hourlyCount.textContent = 'Total for the day: ' + this.total;
             
         var totalCount = document.getElementById('Pike');
             totalCount.appendChild(hourlycount)
@@ -47,20 +47,39 @@ var seaTacAirport = {
     minCustomer: 3,
     maxCustomer: 24,
     avgCookieSale: 1.2,
+    totalPerHr: [],
+    total: 0,
 
     custPerHour: function getRandomInt() {
         return Math.roound(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer;
     },
 
     cookiesPerHr: function() {
+
         for(var i=0; i <storeHours.length; i++){
 
-            cookiesPerHrSeaTac = Math.round(seaTacAirport.custPerHr() * this.avgCookieSale)
+        var calcCookiesPerHrSeaTac = Math.round(seaTacAirport.custPerHr() * this.avgCookieSale);
 
-            return ('Projected sale for ' + storeHours[i] + ' is ' + cookiesPerHrSeaTac + ' cookies')
+            var listLineSeaTac = document.createElement('li');
+                listLineSeaTac.textContent = 'Projected sale for ' + storeHours[i] + ' is ' + calcCookiesPerHrSeaTac + ' cookies.';
+
+            var seaTacLocation = document.getElementById('SeaTac');
+                seaTacLocation.appendChild(listLineSeaTac);
+            
+            this.totalPerHr.push(calcCookiesPerHrSeaTac);
+            this.total += calcCookiesPerHrSeaTac;
         }
-    }
+        var hourlyCount = document.createElement('li');
+            hourlyCount.textContent = 'Total for the day: ' + this.total;
+
+        var totalCount = document.getElementById('SeaTac');
+            totalCount.appendChild(hourlyCount);
+    },
 }
+
+console.log(seaTacAirport)
+seaTacAirport.cookiesPerHr();
+
 
 var seattleCenter = {
     location: 'Seattle Center',
