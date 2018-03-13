@@ -6,6 +6,7 @@ var firstAndPike = {
     minCustomer: 23,
     maxCustomer: 65,
     avgCookieSale: 6.3,
+    cookiesPerHr: [],
         
     custPerHr: function getRandomInt() {
       
@@ -15,16 +16,28 @@ var firstAndPike = {
     cookiesPerHr: function() { 
         for(var i=0; i < storeHours.length; i++) {
         
-        cookiesPerHrPike = Math.round(firstAndPike.custPerHr() * this.avgCookieSale)
-          
-        //return ('Projected sale for ' + storeHours[i] + ' is ' + cookiesPerHrPike + ' cookies')
+        calcCookiesPerHrPike = Math.round(this.custPerHr() * this.avgCookieSale)
+
+        var listLinePike = document.createElement('li')
+            listLinePike.textContent = 'Projected sale for '  + storeHours[i] + ' is ' + calcCookiesPerHrPike +  ' cookies.';
+
+        var pikeLocation = document.getElementById('Pike')
+            pikeLocation.appendChild(listLinePike)
+        
+            //return ('Projected sale for ' + storeHours[i] + ' is ' + cookiesPerHrPike + ' cookies')
+        // var this is my line = document.createElement('li');
+    //     this is my line.textContent = "Hello World from app.js";
+
+    // // Should be <ul id="stuff">
+// var this is my list= document.getElementById('stuff');
+//     ulEl.appendChild(liEl);
          
         }
     },
 }
 
 console.log(firstAndPike)
-console.log(cookiesPerHr)
+firstAndPike.cookiesPerHr();
 
 var seaTacAirport = {
     location: 'SeaTac Airport',
