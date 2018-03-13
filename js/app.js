@@ -27,7 +27,7 @@ var firstAndPike = {
             var listLinePike = document.createElement('li');
                 listLinePike.textContent = 'Projected sale for '  + storeHours[i] + ' is ' + calcCookiesPerHrPike +  ' cookies.';
 
-            var pikeLocation = document.getElementById('Pike'); // this can go outside of the function's
+            var pikeLocation = document.getElementById('pike'); // this can go outside of the function's
                 pikeLocation.appendChild(listLinePike);
 
             this.totalPerHr.push(calcCookiesPerHrPike);
@@ -37,7 +37,7 @@ var firstAndPike = {
         var hourlyCount = document.createElement('p');
             hourlyCount.textContent ='Total for the day: ' + this.total;
             
-        var totalCount = document.getElementById('Pike');
+        var totalCount = document.getElementById('pike');
             totalCount.appendChild(hourlyCount)
     },
 }
@@ -66,7 +66,7 @@ var seaTacAirport = {
             var listLineSeaTac = document.createElement('li');
                 listLineSeaTac.textContent = 'Projected sale for ' + storeHours[i] + ' is ' + calcCookiesPerHrSeaTac + ' cookies.';
 
-            var seaTacLocation = document.getElementById('SeaTac');
+            var seaTacLocation = document.getElementById('seaTac');
                 seaTacLocation.appendChild(listLineSeaTac);
             
             this.totalPerHr.push(calcCookiesPerHrSeaTac);
@@ -75,7 +75,7 @@ var seaTacAirport = {
         var hourlyCount = document.createElement('p');
             hourlyCount.textContent = 'Total for the day: ' + this.total;
 
-        var totalCount = document.getElementById('SeaTac');
+        var totalCount = document.getElementById('seaTac');
             totalCount.appendChild(hourlyCount);
     },
 }
@@ -89,22 +89,76 @@ var seattleCenter = {
     minCustomer: 11,
     maxCustomer: 38,
     avgCookieSale: 3.7,
+    totalPerHr: [],
+    total: 0,
 
-    custPerHour: function() {
-        Math.random(11, 38)
-    }
+    custPerHour: function getRandomInt(){
+        return Math.round(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer
+    },
+
+    cookiesPerHr: function(){
+
+        for(var i=0; i < storeHours.length; i++) {
+            var calcCookiesPerHrCenter = Math.round(seattleCenter.custPerHour() * this.avgCookieSale);
+
+            var listLineCenter = document.createElement('li');
+                listLineCenter.textContent = 'Projected sale for ' + storeHours[i] + ' is ' + calcCookiesPerHrCenter + ' cookies.';
+                
+            var centerLocation = document.getElementById('seattleCenter');
+                centerLocation.appendChild(listLineCenter);
+
+            this.totalPerHr.push(this.calcCookiesPerHrCenter);
+            this.total += calcCookiesPerHrCenter
+        }
+
+        var hourlyCount = document.createElement('p');
+            hourlyCount.textContent = 'Total for the day: ' + this.total;
+
+        var totalcount = document.getElementById('seattleCenter');
+            totalcount.appendChild(hourlyCount);
+    },
 }
+
+console.log(seattleCenter)
+seattleCenter.cookiesPerHr();
 
 var capitolHill = {
     location: 'Capitol Hill',
     minCustomer: 20,
     maxCustomer: 38,
     avgCookieSale: 2.3,
+    totalPerHr: [],
+    total: 0,
 
-    custPerHour: function() {
-        return Math.random(20, 38)
-    }
+    custPerHour: function getRandomInt(){
+        return Math.round(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer
+    },
+
+    cookiesPerHr: function(){
+
+        for(var i=0; i < storeHours.length; i++) {
+            var calcCookiesPerHrHill = Math.round(capitolHill.custPerHour() * this.avgCookieSale);
+
+            var listLineCenter = document.createElement('li');
+                listLineCenter.textContent = 'Projected sale for ' + storeHours[i] + ' is ' + calcCookiesPerHrHill + ' cookies.';
+                
+            var hillLocation = document.getElementById('capitolHill');
+                hillLocation.appendChild(listLineCenter);
+
+            this.totalPerHr.push(this.calcCookiesPerHrHill);
+            this.total += calcCookiesPerHrHill
+        }
+
+        var hourlyCount = document.createElement('p');
+            hourlyCount.textContent = 'Total for the day: ' + this.total;
+
+        var totalcount = document.getElementById('capitolHill');
+            totalcount.appendChild(hourlyCount);
+    },
 }
+
+console.log(seattleCenter)
+seattleCenter.cookiesPerHr();
 
 var alki = {
     location: 'Alki',
