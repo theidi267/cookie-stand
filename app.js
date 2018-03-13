@@ -6,33 +6,36 @@ var firstAndPike = {
     minCustomer: 23,
     maxCustomer: 65,
     avgCookieSale: 6.3,
-    cookiesPerHr: [],
+    totalPerHr: [],
+    total: 0, 
         
     custPerHr: function getRandomInt() {
       
       return Math.round(Math.random() * (this.maxCustomer - this.minCustomer)) + this.minCustomer; 
     },
+
         
     cookiesPerHr: function() { 
+             
         for(var i=0; i < storeHours.length; i++) {
         
-        calcCookiesPerHrPike = Math.round(this.custPerHr() * this.avgCookieSale)
+        var calcCookiesPerHrPike = Math.round(this.custPerHr() * this.avgCookieSale);
 
-        var listLinePike = document.createElement('li')
-            listLinePike.textContent = 'Projected sale for '  + storeHours[i] + ' is ' + calcCookiesPerHrPike +  ' cookies.';
+            var listLinePike = document.createElement('li');
+                listLinePike.textContent = 'Projected sale for '  + storeHours[i] + ' is ' + calcCookiesPerHrPike +  ' cookies.';
 
-        var pikeLocation = document.getElementById('Pike')
-            pikeLocation.appendChild(listLinePike)
-        
-            //return ('Projected sale for ' + storeHours[i] + ' is ' + cookiesPerHrPike + ' cookies')
-        // var this is my line = document.createElement('li');
-    //     this is my line.textContent = "Hello World from app.js";
+            var pikeLocation = document.getElementById('Pike');
+                pikeLocation.appendChild(listLinePike);
 
-    // // Should be <ul id="stuff">
-// var this is my list= document.getElementById('stuff');
-//     ulEl.appendChild(liEl);
-         
-        }
+            this.totalPerHr.push(calcCookiesPerHrPike);
+            this.total +=  calcCookiesPerHrPike    
+                       
+        }    
+        var hourlycount = document.createElement('p');
+            hourlycount.textContent = 'Total for the day: ' + this.total;
+            
+        var totalCount = document.getElementById('Pike');
+            totalCount.appendChild(hourlycount)
     },
 }
 
