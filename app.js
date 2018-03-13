@@ -8,6 +8,7 @@ var firstAndPike = {
     avgCookieSale: 6.3,
     totalPerHr: [],
     total: 0, 
+
         
     custPerHr: function getRandomInt() {
       
@@ -19,23 +20,23 @@ var firstAndPike = {
              
         for(var i=0; i < storeHours.length; i++) {
         
-        var calcCookiesPerHrPike = Math.round(this.custPerHr() * this.avgCookieSale);
+            var calcCookiesPerHrPike = Math.round(this.custPerHr() * this.avgCookieSale);
 
-            var listLinePike = document.createElement('li');
-                listLinePike.textContent = 'Projected sale for '  + storeHours[i] + ' is ' + calcCookiesPerHrPike +  ' cookies.';
+        //     var listLinePike = document.createElement('li');
+        //         listLinePike.textContent = 'Projected sale for '  + storeHours[i] + ' is ' + calcCookiesPerHrPike +  ' cookies.';
 
-            var pikeLocation = document.getElementById('Pike');
-                pikeLocation.appendChild(listLinePike);
+        //     var pikeLocation = document.getElementById('Pike'); // this can go outside of the function's
+        //         pikeLocation.appendChild(listLinePike);
 
-            this.totalPerHr.push(calcCookiesPerHrPike);
-            this.total +=  calcCookiesPerHrPike;   
+        //     this.totalPerHr.push(calcCookiesPerHrPike);
+        //     this.total +=  calcCookiesPerHrPike;   
                        
-        }    
-        var hourlyCount = document.createElement('p');
-            hourlyCount.textContent = 'Total for the day: ' + this.total;
+        // }    
+        // var hourlyCount = document.createElement('p');
+        //     hourlyCount.textContent ='Total for the day: ' + this.total;
             
-        var totalCount = document.getElementById('Pike');
-            totalCount.appendChild(hourlycount)
+        // var totalCount = document.getElementById('Pike');
+        //     totalCount.appendChild(hourlycount)
     },
 }
 
