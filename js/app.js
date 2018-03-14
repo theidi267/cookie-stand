@@ -6,6 +6,8 @@ var allLocations = []; //this holds the objects
 
 var figuresTable = document.getElementById('finalfigures'); //accsesses the table
 
+var addLocationForm = document.getElementById('addLocationForm');
+
 function Locations(location, minCustomer, maxCustomer, avgCookieSale){
   this.location = location;
   this.minCustomer = minCustomer;
@@ -41,11 +43,11 @@ Locations.prototype.render = function () {
 
 }; //makes the table
 
-var pike = new Locations('1st and Pike', 23, 65, 6.3); //created the objects
-var seatac = new Locations('SeaTac Airport', 3, 24, 1.2);
-var center = new Locations('Seattle Center', 11, 38, 3.7);
-var capitolhill = new Locations('Capitil Hill', 20, 38, 2.3);
-var alki = new Locations('Alki', 2, 16, 4.6);
+new Locations('1st and Pike', 23, 65, 6.3); //created the objects
+new Locations('SeaTac Airport', 3, 24, 1.2);
+new Locations('Seattle Center', 11, 38, 3.7);
+new Locations('Capitil Hill', 20, 38, 2.3);
+new Locations('Alki', 2, 16, 4.6);
 
 
 Locations.prototype.custPerHr = function getRandomInt(){
@@ -114,33 +116,41 @@ function heading(){
   figuresTable.appendChild(tHead);
 }
 
-// function foot(){
-//   var tFoot = document.createElement('tFoot');
-//   var trFoot = document.createElement('tr');
-//   var thFoot = document.createElement('td');
-//   thFoot.textContent = 'Daily total';
-//   trFoot.appendChild(thFoot);
-//   tFoot.appendChild(thFoot);
+function renderAllLocations() {
+  for(var i in allLocations) {
+    allLocations[i].render();
+  }
+}
 
-//   for(var i = 0; i < pike.totalPerHr; i++) {
+// heading();
+// renderAllLocations();
+//locTotalPerHr();
 
+// event listener's callback function
+function addNewLocation(event){
 
-//   thFoot.textContent = 'something';
-//     trFoot.appendChild(thFoot);
-//     tFoot.appendChild(thFoot);
-//   }
-//   figuresTable.appendChild(tFoot);
-// }
+  event.preventDefault();
+  console.log(event.target.avgCookieSale.value);
 
+  var newLocation = event.target.location.value;
+  var newminCustomer = event.target.minCustomer.value;
+  var newmaxCustomer= event.target.maxCustomer.value;
+  var newavgCookieSale = event.target.avgCookieSale.value;
+
+  new Locations(newLocation, newminCustomer, newmaxCustomer, newavgCookieSale);
+
+  figuresTable.innerHTML = '';
+  heading();
+  renderAllLocations();
+  locTotalPerHr();
+}
+
+// add event listener
+addLocationForm.addEventListener('submit', addNewLocation);
+
+// Now we need to call our functions
 heading();
-pike.render();
-seatac.render();
-center.render();
-capitolhill.render();
-alki.render();
-//totalForFoot();
-// foot();
+renderAllLocations();
 locTotalPerHr();
-
 
 
