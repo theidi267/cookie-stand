@@ -23,13 +23,19 @@ Locations.prototype.custPerHr = function getRandomInt(){
 };
 
 Locations.prototype.cookiesPerHr = function(){
+
+  // make a var for day total
   for(var i=0; i < storeHours.length; i++) {
 
     var doTheMath = Math.round(this.custPerHr() * this.avgCookieSale);
 
+    //do the datytotal += here
+
     this.totalPerHr.push(doTheMath);
     this.total += doTheMath;
   }
+
+  //this.dayttal = total  just total in my code and add the last row here
 };
 
 Locations.prototype.render = function () {
@@ -65,11 +71,35 @@ function heading(){
     thHead = document.createElement('th');
     thHead.textContent = storeHours[i];
     trHead.appendChild(thHead);
-
   }
+  thHead.textContent = 'Total';
+  trHead.appendChild(thHead);
+
   figuresTable.appendChild(trHead);
 }
 
+var trHead = document.createElement('tr');
+var thHead = document.createElement('th');
+thHead.textContent = 'Total';
+trHead.appendChild(thHead);
+
+
+
+function foot(){
+
+  var trFoot = document.createElement('tr');
+  var thFoot = document.createElement('td');
+  thFoot.textContent = 'Total Cookies';
+  trFoot.appendChild(thFoot);
+
+  for(var i = 0; i < pike.totalPerHr; i++) {
+
+    thFoot.textContent = 'something';
+    trFoot.appendChild(thFoot);
+
+  }
+  figuresTable.appendChild(trFoot);
+}
 
 var pike = new Locations('1st and Pike', 23, 65, 6.3); //created the objects
 var seatac = new Locations('SeaTac Airport', 3, 24, 1.2);
@@ -83,6 +113,8 @@ seatac.render();
 center.render();
 capitolhill.render();
 alki.render();
+//totalForFoot();
+foot();
 
 
 
