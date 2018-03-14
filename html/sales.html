@@ -2,8 +2,8 @@
 <html>
 <head>    
     <title>Cookie Shop</title>
-    <link rel="stylesheet" href="../css/style.css"></link>
-    <link rel="stylesheet" href="../css/reset.css"></link>
+    <!-- <link rel="stylesheet" href="../css/reset.css"></link> -->
+    <!-- <link rel="stylesheet" href="../css/style.css"></link>     -->
 
 </head>
 
@@ -11,6 +11,26 @@
     <h1>Sales figures</h1>
 
     <table id="finalfigures"></table>
+
+    <form id="addLocationForm">
+        <fieldset>
+            <legend>Add New Location</legend>
+
+            <label for="location">Location:</label>
+            <input type="text" name="location">
+
+            <label for="minCustomer">Minuimum Customer:</label>
+            <input type="number" name="minCustomer">
+
+            <label for="maxCustomer">Maximum Customer:</label>
+            <input type="number" name="maxCustomer">
+
+            <label for="avgCookieSale">Avarage Cookie Sale:</label>
+            <input type="number" name="avgCookieSale">
+
+            <button>Add Location</button>
+        </fieldset>
+    </form>
  
 
      <script src = "../js/app.js"></script>
