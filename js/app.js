@@ -56,6 +56,8 @@ Locations.prototype.custPerHr = function getRandomInt(){
 
 Locations.prototype.cookiesPerHr = function(){
 
+  this.totalPerHr = [];
+
   for(var i=0; i < storeHours.length; i++) {
 
     var doTheMath = Math.round(this.custPerHr() * this.avgCookieSale);
@@ -124,7 +126,7 @@ function renderAllLocations() {
 
 // heading();
 // renderAllLocations();
-//locTotalPerHr();
+// locTotalPerHr();
 
 // event listener's callback function
 function addNewLocation(event){
@@ -145,10 +147,10 @@ function addNewLocation(event){
   locTotalPerHr();
 }
 
-// add event listener
+
 addLocationForm.addEventListener('submit', addNewLocation);
 
-// Now we need to call our functions
+
 heading();
 renderAllLocations();
 locTotalPerHr();
