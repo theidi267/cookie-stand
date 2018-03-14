@@ -65,13 +65,31 @@ Locations.prototype.cookiesPerHr = function(){
 
 function locTotalPerHr(){
 
-  for(var i = 0; i < storeHours; i++) {
-    
-    var hrValue = 0; 
+  var foot = document.createElement('td');
+  foot.textContent = 'Hourly Totals';
 
-      for(var j = 0; j < allLocations; j++){
-        var hrValueAll += allLocations[j].totalPerHr[i] 
-      }
+  var footRow = document.createElement('tFoot');
+  footRow.appendChild(foot);
+
+
+  for(var i = 0; i < storeHours.length; i++) {
+
+    var hrValue = 0;
+
+    for(var j = 0; j < allLocations.length; j++){
+
+      hrValue += allLocations[j].totalPerHr[i];
+
+    }
+
+    var footData = document.createElement('td');
+    footData.textContent = hrValue;
+
+    // var footDataRow = document.createElement('tFoot');
+    footRow.appendChild(footData);
+  }
+  figuresTable.appendChild(footRow);
+
 }
 
 function heading(){
@@ -82,7 +100,7 @@ function heading(){
   // trHead.appendChild(thHead);
   tHead.appendChild(thHead);
 
-  for(var i = 0; i < storeHours.length; i++) {
+  for(var i = 0; i <= storeHours.length; i++) {
 
     thHead = document.createElement('th');
     thHead.textContent = storeHours[i];
@@ -96,23 +114,23 @@ function heading(){
   figuresTable.appendChild(tHead);
 }
 
-function foot(){
-  var tFoot = document.createElement('tFoot');
-  var trFoot = document.createElement('tr');
-  var thFoot = document.createElement('td');
-  thFoot.textContent = 'Daily total';
-  trFoot.appendChild(thFoot);
-  tFoot.appendChild(thFoot);
+// function foot(){
+//   var tFoot = document.createElement('tFoot');
+//   var trFoot = document.createElement('tr');
+//   var thFoot = document.createElement('td');
+//   thFoot.textContent = 'Daily total';
+//   trFoot.appendChild(thFoot);
+//   tFoot.appendChild(thFoot);
 
-  for(var i = 0; i < pike.totalPerHr; i++) {
+//   for(var i = 0; i < pike.totalPerHr; i++) {
 
-    thFoot.textContent = 'something';
-    trFoot.appendChild(thFoot);
-    tFoot.appendChild(thFoot);
 
-  }
-  figuresTable.appendChild(tFoot);
-}
+//   thFoot.textContent = 'something';
+//     trFoot.appendChild(thFoot);
+//     tFoot.appendChild(thFoot);
+//   }
+//   figuresTable.appendChild(tFoot);
+// }
 
 heading();
 pike.render();
@@ -121,7 +139,8 @@ center.render();
 capitolhill.render();
 alki.render();
 //totalForFoot();
-foot();
+// foot();
+locTotalPerHr();
 
 
 
