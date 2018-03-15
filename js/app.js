@@ -15,7 +15,7 @@ function Locations(location, minCustomer, maxCustomer, avgCookieSale){
   this.avgCookieSale = avgCookieSale;
   this.totalPerHr = [];
   this.total = 0;
-  allLocations.push(this);
+  allLocations.push(this); //unshift would put it in front
 } //constructs the element an pushes it in the array
 
 Locations.prototype.render = function () {
@@ -77,19 +77,15 @@ function locTotalPerHr(){
 
 
   for(var i = 0; i < storeHours.length; i++) {
-
     var hrValue = 0;
 
     for(var j = 0; j < allLocations.length; j++){
-
       hrValue += allLocations[j].totalPerHr[i];
-
     }
 
     var footData = document.createElement('td');
     footData.textContent = hrValue;
 
-    // var footDataRow = document.createElement('tFoot');
     footRow.appendChild(footData);
   }
   figuresTable.appendChild(footRow);
@@ -131,17 +127,17 @@ function renderAllLocations() {
 // event listener's callback function
 function addNewLocation(event){
 
-  event.preventDefault();
+  event.preventDefault(); //to prevent the page from reloading
   console.log(event.target.avgCookieSale.value);
 
   var newLocation = event.target.location.value;
   var newminCustomer = event.target.minCustomer.value;
   var newmaxCustomer= event.target.maxCustomer.value;
-  var newavgCookieSale = event.target.avgCookieSale.value;
+  var newavgCookieSale = event.target.avgCookieSale.value;  //this is coming from the HTML file (name on the input element)
 
   new Locations(newLocation, newminCustomer, newmaxCustomer, newavgCookieSale);
 
-  figuresTable.innerHTML = '';
+  figuresTable.innerHTML = ''; //wipes the table to start anew
   heading();
   renderAllLocations();
   locTotalPerHr();
