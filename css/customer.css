@@ -5,20 +5,20 @@ body, html{
 }
 body {
 
-  background: linear-gradient(#F3E7E8, #E9D3D4, #D3A7AA, #BE7E81);
+  background: linear-gradient(#F3E7E8, #59181C);
 }
 
 h1 {  
 
   font-family: 'VT323', monospace;
-  color: red;
+  color: #390511;
   font-size: 4em;
   text-align: center;
 }
 
 
 
-img {
+.imageTop {
   display:block;
   margin: auto
 ;
