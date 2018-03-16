@@ -57,6 +57,7 @@ Locations.prototype.custPerHr = function getRandomInt(){
 Locations.prototype.cookiesPerHr = function(){
 
   this.totalPerHr = [];
+  this.total = 0;
 
   for(var i=0; i < storeHours.length; i++) {
 
@@ -75,7 +76,7 @@ function locTotalPerHr(){
   var footRow = document.createElement('tFoot');
   footRow.appendChild(foot);
 
-
+  var grandTotal = 0;
   for(var i = 0; i < storeHours.length; i++) {
     var hrValue = 0;
 
@@ -87,7 +88,11 @@ function locTotalPerHr(){
     footData.textContent = hrValue;
 
     footRow.appendChild(footData);
+    grandTotal +=hrValue;
   }
+  var grandAllTotal= document.createElement('td');
+  grandAllTotal.textContent = grandTotal;
+  footRow.appendChild(grandAllTotal);
   figuresTable.appendChild(footRow);
 
 }
