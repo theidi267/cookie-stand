@@ -1,0 +1,29 @@
+
+body {
+
+  background: url("/pictures/cocina.gif");  
+}
+
+h1 {  
+
+  font-family: 'VT323', monospace;
+  color: red;
+  font-size: 4em;
+  text-align: center;
+}
+
+
+
+img {
+  display:block;
+  margin: auto
+;
+
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+          transition:         transform .8s ease-in-out;
+}
+img:hover {
+  -webkit-transform: rotate(720deg);
+          transform: rotate(720deg);
+}

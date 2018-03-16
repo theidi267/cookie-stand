@@ -62,7 +62,7 @@ button {
   margin: 0 auto;
 }
 
-table.td:nth-child(17) {
+tFoot td:last.child {
 
   background: #271617;
   color: #F3E7E8;
