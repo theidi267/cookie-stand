@@ -1,7 +1,11 @@
 
+body, html{
+
+  height: 100%;
+}
 body {
 
-  background: url("/pictures/cocina.gif");  
+  background: linear-gradient(#F3E7E8, #E9D3D4, #D3A7AA, #BE7E81);
 }
 
 h1 {  
@@ -27,3 +31,4 @@ img:hover {
   -webkit-transform: rotate(720deg);
           transform: rotate(720deg);
 }
+
