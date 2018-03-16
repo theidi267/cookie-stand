@@ -16,7 +16,31 @@ h1 {
   text-align: center;
 }
 
+.pic {
 
+  position: relative;
+  width: min-content;
+  margin: auto;
+  
+}
+
+.imageBottom {
+
+  position: relative;
+  border: solid 5px #390511;
+  margin: auto;
+  z-index: 1;
+  
+}
+.imageTop {
+
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  
+  z-index: 3;
+  
+}
 
 .imageTop {
   display:block;
