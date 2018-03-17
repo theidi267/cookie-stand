@@ -108,6 +108,9 @@ form {
 
 .button {
 
+  background-color: #390511;
+  color: #F3E7E8;
+  font-weight: bold;
   display: inline-block;
   border-radius: 50%;
   height: 60px;
