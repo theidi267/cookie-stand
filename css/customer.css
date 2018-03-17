@@ -57,8 +57,7 @@ img:hover {
           transform: rotate(720deg);
 }
 
-/* #us {
+#us {
 
-  display: none;
-
-} */
+  width: 33%;
+}
