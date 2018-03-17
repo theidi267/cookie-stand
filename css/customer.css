@@ -14,7 +14,7 @@ h1 {
   color: #390511;
   font-size: 4em;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 1em;
 }
 
 .pic {
@@ -57,8 +57,62 @@ img:hover {
           transform: rotate(720deg);
 }
 
-/* #us {
+.mainlink {
 
-  display: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  text-align: center;
+}
 
-} */
+form {
+
+ width: 30%;
+ margin: 0;
+
+}
+
+#us {
+
+  height: 2em;
+  margin: 0;
+}
+
+#expect {
+
+  height: 2em;
+  margin: 0;
+ 
+}
+
+#one {
+
+  width: 1em;
+  margin-left: 15em;
+  float: left;
+  
+}
+
+#two {
+
+  width: 12em;
+  margin-right: 14em;
+  float: right;
+}
+
+
+#us img {
+
+  width: 200px;
+}
+
+
+.button {
+
+  display: inline-block;
+  border-radius: 50%;
+  height: 60px;
+  width: 150px;
+  margin-top: 1em;
+
+}
+
