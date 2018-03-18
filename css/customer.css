@@ -62,26 +62,32 @@ img:hover {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2em;
   text-align: center;
-}
-
-form {
-
- width: 30%;
- margin: 0;
 
 }
 
 #us {
 
-  height: 2em;
-  margin: 0;
+  width: 35%;
+  margin-bottom: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  font-weight: bolder;
+  position: absolute;
+  bottom: 15%;
+ 
 }
 
 #expect {
 
-  height: 2em;
-  margin: 0;
- 
+  width: 35%;
+  margin-bottom: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  font-weight: bolder;
+  position: absolute;
+  bottom: 27%;
+  left: 65%;
+   
 }
 
 #one {
@@ -103,11 +109,15 @@ form {
 #us img {
 
   width: 200px;
+
 }
 
 
 .button {
 
+  background-color: #390511;
+  color: #F3E7E8;
+  font-weight: bold;
   display: inline-block;
   border-radius: 50%;
   height: 60px;
