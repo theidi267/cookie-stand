@@ -7,7 +7,110 @@ html {
 body {
 
   background: linear-gradient(#F3E7E8, #6D373A);
+
 }
+
+header {
+
+  text-align: center;
+  font-size: 1.5em;
+  padding-top: 2%;
+  margin: 0;
+
+}
+
+h1 {
+
+  font-family: 'VT323', monospace;
+  color: #390511;
+  font-size: 4em;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 3%;
+  margin: 0;
+
+}
+
+.intro {
+
+  font-style: italic;
+  font-size: 1.5em;
+  margin: auto;
+  padding-top: 3%;
+  width: 60%;  
+
+}
+
+.locations {
+
+  font-size: 1.5em;
+  font-weight: bold;
+  float: left;
+  padding-top: 4%;
+  padding-left: 17%;
+
+}
+
+.locations p {
+
+  font-family: 'VT323', monospace;
+  color: #390511;
+  font-size: 1.5em;
+  padding: 3px;
+
+}
+
+.locations li {
+
+  padding: 3px;
+  
+}
+
+footer {
+
+  text-decoration: none;
+  text-align: center;  
+  font-family: 'VT323', monospace;
+  color: #390511;
+  font-size: 2em;
+  width: min-content;
+  margin: auto;  
+
+}
+
+.shop {
+
+  font-size: 1.5em;
+  font-weight: bold;
+  float: right;
+  width: 35%;
+  padding-top: 4%;
+  padding-right: 8%;
+
+}
+
+.shop h2 {
+
+  font-family: 'VT323', monospace;
+  color: #390511;
+  font-size: 1.5em;
+  padding: 3px;
+
+}
+
+.shop li {
+
+  padding: 3px;
+
+}
+
+.shop p {
+
+  padding: 3px;
+  font-style: italic;
+
+}
+
 
 #cutter:hover {
   
@@ -19,6 +122,8 @@ body {
   content: url(../pictures/cutter.jpeg);
   display: block;
   position: absolute;
+  bottom: 8%;
+  right: 50%;
   
 }
 
@@ -32,6 +137,8 @@ body {
   content: url(../pictures/shirt.jpg);
   display: block;
   position: absolute;
+  bottom: 8%;
+  right: 50%;
   
 }
 
@@ -45,6 +152,8 @@ body {
   content: url(../pictures/fish.jpg);
   display: block;
   position: absolute;
+  bottom: 8%;
+  right: 50%;
   
 }
 
@@ -58,6 +167,8 @@ body {
   content: url(../pictures/frosted-cookie.jpg);
   display: block;
   position: absolute;
+  bottom: 8%;
+  right: 50%;
   
 }
 
@@ -71,6 +182,8 @@ body {
   content: url(../pictures/chinook.jpg);
   display: block;
   position: absolute;
+  bottom: 8%;
+  right: 50%;
   
 }
 
