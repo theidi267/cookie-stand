@@ -1,0 +1,79 @@
+
+html {
+
+  height: 100%;
+}
+
+body {
+
+  background: linear-gradient(#F3E7E8, #6D373A);
+}
+
+#cutter:hover {
+  
+  position: relative;   
+}
+
+#cutter:hover:after {
+
+  content: url(../pictures/cutter.jpeg);
+  display: block;
+  position: absolute;
+  
+}
+
+#shirt:hover {
+  
+  position: relative;   
+}
+
+#shirt:hover:after {
+
+  content: url(../pictures/shirt.jpg);
+  display: block;
+  position: absolute;
+  
+}
+
+#fishes:hover {
+  
+  position: relative;   
+}
+
+#fishes:hover:after {
+
+  content: url(../pictures/fish.jpg);
+  display: block;
+  position: absolute;
+  
+}
+
+#cookie:hover {
+  
+  position: relative;   
+}
+
+#cookie:hover:after {
+
+  content: url(../pictures/frosted-cookie.jpg);
+  display: block;
+  position: absolute;
+  
+}
+
+#poster:hover {
+  
+  position: relative;   
+}
+
+#poster:hover:after {
+
+  content: url(../pictures/chinook.jpg);
+  display: block;
+  position: absolute;
+  
+}
+
+
+
+
