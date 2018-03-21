@@ -48,6 +48,7 @@ h1 {
   float: left;
   padding-top: 4%;
   padding-left: 17%;
+  overflow: auto;
 
 }
 
@@ -86,7 +87,8 @@ footer {
   width: 35%;
   padding-top: 4%;
   padding-right: 8%;
-
+  overflow: auto;
+  
 }
 
 .shop h2 {

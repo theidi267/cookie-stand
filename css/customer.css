@@ -123,6 +123,12 @@ img:hover {
   height: 60px;
   width: 150px;
   margin-top: 1em;
+ 
+}
 
+.popup {
+
+  background: wheat;
+  z-index: 7;
 }
 
